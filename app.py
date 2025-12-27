@@ -1,38 +1,32 @@
-def calculate_grade(avg):
-    if 90 <= avg <= 100:
-        return "S"
-    elif 80 <= avg < 90:
-        return "A"
-    elif 65 <= avg < 80:
-        return "B"
-    elif 50 <= avg < 65:
-        return "C"
-    elif 40 <= avg < 50:
-        return "D"
+def allocate_room(cgpa):
+    if 9.0 <= cgpa <= 10.0:
+        return "Premium AC Room"
+    elif 8.0 <= cgpa < 9.0:
+        return "AC Room"
+    elif 7.0 <= cgpa < 8.0:
+        return "Deluxe Non-AC"
+    elif 6.0 <= cgpa < 7.0:
+        return "Standard Room"
     else:
-        return "F"
+        return "Not Eligible"
 
 
 def student_details(
-    name="Kavya",
-    department="BCA",
-    semester="3",
-    m1=85,
-    m2=78,
-    m3=92
+    name="Renuka",
+    usn="1RV23BCA045",
+    year="2nd Year",
+    cgpa=8.6
 ):
-    avg = (m1 + m2 + m3) / 3
-    grade = calculate_grade(avg)
+    room = allocate_room(cgpa)
 
-    return (
-        f"Name       : {name}\n"
-        f"Department : {department}\n"
-        f"Semester   : {semester}\n"
-        f"Marks      : {m1}, {m2}, {m3}\n"
-        f"Average    : {avg:.2f}\n"
-        f"Grade      : {grade}"
-    )
+    print("Hostel Allocation Details")
+    print("--------------------------")
+    print(f"Name          : {name}")
+    print(f"USN           : {usn}")
+    print(f"Year of Study : {year}")
+    print(f"CGPA          : {cgpa}")
+    print(f"Room Category : {room}")
 
 
 if __name__ == "__main__":
-    print(student_details())
+    student_details()
