@@ -1,19 +1,23 @@
-from app import calculate_grade
+# test_hostel_allocation.py
 
-def test_grade_s():
-    assert calculate_grade(95) == "S"
+from app import allocate_room
 
-def test_grade_a():
-    assert calculate_grade(85) == "A"
 
-def test_grade_b():
-    assert calculate_grade(70) == "B"
+def test_premium_ac_room():
+    assert allocate_room(9.5) == "Premium AC Room"
 
-def test_grade_c():
-    assert calculate_grade(55) == "C"
 
-def test_grade_d():
-    assert calculate_grade(45) == "D"
+def test_ac_room():
+    assert allocate_room(8.4) == "AC Room"
 
-def test_grade_f():
-    assert calculate_grade(30) == "F"
+
+def test_deluxe_non_ac_room():
+    assert allocate_room(7.6) == "Deluxe Non-AC"
+
+
+def test_standard_room():
+    assert allocate_room(6.3) == "Standard Room"
+
+
+def test_not_eligible():
+    assert allocate_room(5.2) == "Not Eligible"
