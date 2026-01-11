@@ -1,5 +1,4 @@
 import sys
-
 def allocate_room(cgpa):
     if 9.0 <= cgpa <= 10.0:
         return "Premium AC Room"
@@ -11,7 +10,6 @@ def allocate_room(cgpa):
         return "Standard Room"
     else:
         return "Not Eligible"
-
 def student_details(name="Renuka", usn="1RV23BCA045", year="2nd Year", cgpa=8.6):
     room = allocate_room(float(cgpa))
     print("Hostel Allocation Details")
@@ -21,9 +19,7 @@ def student_details(name="Renuka", usn="1RV23BCA045", year="2nd Year", cgpa=8.6)
     print(f"Year of Study : {year}")
     print(f"CGPA          : {cgpa}")
     print(f"Room Category : {room}")
-
 if __name__ == "__main__":
-    # Accept command-line arguments (from Jenkins parameters)
     args = sys.argv[1:]
     if len(args) == 4:
         student_details(*args)
