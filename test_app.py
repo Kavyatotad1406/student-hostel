@@ -1,7 +1,4 @@
-# test_hostel_allocation.py
-
 from app import allocate_room
-
 
 def test_premium_ac_room():
     assert allocate_room(9.5) == "Premium AC Room"
